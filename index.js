@@ -8,7 +8,7 @@ submit.addEventListener('click', (e)=>{
     let emailDomnain = field.substring(0, field.indexOf('@'))
     let emailSubDomain = field.substring(field.indexOf('@') + 1)
     let emailTLD = field.substring(field.indexOf('.') + 1)
-    if(emailDomnain.length < 1 || !field.includes('@') || !emailSubDomain.includes('.') || emailTLD.length < 2)
+    if(emailDomnain.length < 2 || !field.includes('@') || !emailSubDomain.includes('.') || emailTLD.length < 2)
         errorMessage()
     else{
         successMessage()

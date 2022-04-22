@@ -125,6 +125,9 @@ button{
     border: none;
     height: 3.5rem;
     background: var(--clr-gradient-red);
+    cursor: pointer;
+    background: var(--clr-gradient-red);
+    transition: 0.3s ease;
 }
 .error{
     color: var(--clr-soft-red);
