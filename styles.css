@@ -1,0 +1,218 @@
+:root{
+    --clr-desaturated-red: hsl(0, 35%, 70%);
+    --clr-soft-red: hsl(0, 93%, 68%);
+    --clr-dark-grayish-red: hsl(0, 6%, 24%);
+    --clr-gradient-lightred: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --clr-gradient-red: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%)); 
+    --font-size: 16px;
+    --font-family: 'Josefin Sans', sans-serif;
+    --font-weight-thin: 300;
+    --font-weight-med: 400;
+    --font-weight-bold: 600;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    height: 100%;
+}
+html{
+    height: 100%;
+}
+.wrapper{
+    display: grid;
+    grid-auto-flow: dense;
+    background: var(--clr-gradient-lightred);
+    
+}
+header{
+    grid-row: 1;
+    max-height: 4rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.logo{
+    width: 13rem;
+    padding: 1rem;
+}
+.right-side{
+    display: none;
+}
+.right-side-mobile{
+    display:  initial;
+}
+main{
+    grid-row: 3;
+    /* padding: 1rem; */
+    text-align: center;
+    height: 100%;
+}
+/* #coming-soon-info{
+    width: 32rem;
+} */
+.title{
+    font-family: var(--font-family);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    line-height: 3rem;
+    color: var(--clr-dark-grayish-red);
+    padding: 0 2rem;
+}
+.title > span{
+    font-weight: var(--font-weight-thin);
+    color: var(--clr-desaturated-red);
+}
+.message{
+    color: var(--clr-desaturated-red);
+    line-height: 1.5rem;
+    font-size: 1rem;
+    /* max-width: 30rem; */
+    padding: 0 2rem;
+    font-weight: var(--font-weight-med);
+    margin-top: -2rem;
+    letter-spacing: 0.02rem;
+}
+.error-img{
+    position: absolute;
+    top: 2rem;
+    left: 14rem;
+}
+.hide{
+    display: none;
+}
+::placeholder{
+    font-weight: var(--font-weight-med);
+    color: var(--clr-desaturated-red);
+    /* padding: 0 2rem; */
+    letter-spacing: 0.02rem;
+    font-family: var(--font-family);
+}
+.input-form{
+    /* width: 17.8rem; */
+    position: relative;
+    padding: 1rem;
+}
+input[type=email]{
+    padding: 0 2rem;
+    width: 100%;
+    border-radius: 2rem;
+    height: 3.5rem;
+    background-color: var(--clr-gradient-lightred);
+    border: 1px solid var(--clr-desaturated-red);
+    color: var(--clr-dark-grayish-red);
+}
+input[type=email]:active,
+input[type=email]:focus,
+input[type=email]:focus-visible{
+    outline: var(--clr-soft-red) auto 1px;
+}
+button{
+    position: absolute;
+    margin-left: -6rem;
+    width: 6.25rem;
+    border-radius: 2rem;
+    border: none;
+    height: 3.5rem;
+    background: var(--clr-gradient-red);
+}
+.error{
+    color: var(--clr-soft-red);
+    padding: 0 4rem;
+    font-weight: var(--font-weight-med);
+}
+footer{
+    grid-row: 4;
+}
+#hero-img{
+    width: 100%;
+}
+
+@media (min-width: 70em) {
+   .wrapper{
+        
+        display: grid;
+        grid-auto-columns: 50%;
+        min-height: 100%;
+        background: url(./images/bg-pattern-desktop.svg) no-repeat;
+    }
+    .right-side-mobile{
+        display: none;
+    }
+    .right-side{
+        display: initial;
+        grid-area: 1 / 2;
+        grid-row: 4 / -1;
+        padding: 0;
+        margin: 0;
+    }
+    .right-side > img{
+        float: right;
+    }
+    header{
+       grid-area: 2 / 1;
+       grid-row-start: 1;
+       margin-left: 8rem;
+       margin-top: 3rem;
+    }
+    .title{
+        font-size: 4rem;
+        line-height: 5rem;
+    }
+    main{
+        font-size: initial;
+        grid-area: 3 / 1;
+        grid-row-start: 2;
+        margin-left: 6rem;
+        margin-top: -4rem;
+        text-align: left;
+        height: 100%;
+    }
+    #coming-soon-info{
+        width: 32rem;
+    }
+    .input-form{
+        /* width: 27.8rem; */
+        position: relative;
+        margin-top: 2.5rem;
+        padding: 0 2rem;
+    }
+    input[type=email]{
+        padding: 0 2rem;
+        width: 100%;
+        border-radius: 2rem;
+        height: 3.5rem;
+        border: 1px solid var(--clr-desaturated-red);
+    }
+    input[type=email]:focus-visible{
+        outline: var(--clr-soft-red) auto 1px;
+    }
+    .error-img{
+        position: absolute;
+        top: 1rem;
+        left: 21rem;
+    }
+    button{
+        position: absolute;
+        margin-left: -6rem;
+        width: 6.25rem;
+        border-radius: 2rem;
+        border: none;
+        height: 3.5rem;
+        background: var(--clr-gradient-red);
+    }
+    footer{
+        grid-area: 4 / 1;
+        grid-row-start: 3;
+    }
+}
